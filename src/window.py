@@ -17,7 +17,7 @@ class MainWindow(tk.Frame):
             testlist.append(random()*10)
             i += 1
         
-        plt
+        #plt.
 
     def add_graph(self):
         self.counter += 1
