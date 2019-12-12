@@ -1,7 +1,7 @@
 import tkinter as tk
 from matplotlib import pyplot as plt
 import os
-import random
+from random import random
 
 class MainWindow(tk.Frame):
     counter = 0
