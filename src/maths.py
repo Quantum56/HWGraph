@@ -81,8 +81,8 @@ def mathything(a1, muta1a2, muta2a1, a1a1fit, a1a2fit, a2a2fit, popsize, gens, r
         if ifdecreasing:
             population -= (population * ((1-a1a1fit) + (1-a1a2fit) + (1-a2a2fit)))
             population = round(population)
-            print(population)
-    # print(population)
+            #print(population)
+    print(population)
     return a1arr
 
 arr = mathything(0.5, 0, 0, 0.97, 1.0, 1.0, 100, 100, "yes", True)
