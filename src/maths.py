@@ -39,8 +39,6 @@ def mathything(a1, muta1a2, muta2a1, a1a1fit, a1a2fit, a2a2fit, popsize, gens, r
 
     p = a1
     q = 1 - a1
-    a1freqarr = [p]
-    a2freqarr = [q]
     a1a1arr = []
     a1a2arr = []
     a2a2arr = []
