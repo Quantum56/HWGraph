@@ -26,8 +26,8 @@ def graph_create(mylist, type):
     legend()
     
 
-    #show()  # Actually, don't show, just save to foo.png
-    savefig('foo.png', bbox_inches='tight')
+    show()  # Actually, don't show, just save to foo.png
+    #savefig('foo.png', bbox_inches='tight')
 
 def mathything(a1, muta1a2, muta2a1, a1a1fit, a1a2fit, a2a2fit, popsize, gens, randomness, ifdecreasing):
     if randomness == 'yes':
