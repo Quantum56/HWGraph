@@ -84,12 +84,13 @@ def mathything(a1, muta1a2, muta2a1, a1a1fit, a1a2fit, a2a2fit, popsize, gens, r
             #print(population)
     print(population)
     return a1arr
+    
+if __name__ == '__main__':
+    arr = mathything(0.5, 0, 0, 0.97, 1.0, 1.0, 100, 100, "yes", True)
 
-arr = mathything(0.5, 0, 0, 0.97, 1.0, 1.0, 100, 100, "yes", True)
-
-for x in range(len(arr)):
-    print(arr[x], end=" ")
-graph_create(arr, 'A1')
+    for x in range(len(arr)):
+        print(arr[x], end=" ")
+    graph_create(arr, 'A1')
 
 #df = pd.DataFrame({'x': range(1,101), 'y': np.random.randn(100)*15+range(1,101), 'z': (np.random.randn(100)*15+range(1,101))*2 })
  
