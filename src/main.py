@@ -6,6 +6,7 @@ from os import path
 from random import random
 from pylab import figure, axes, plot, title, show, legend, savefig, ylim
 import math as m
+from datetime import datetime
 #import logging
 
 def main():
@@ -77,11 +78,17 @@ def main():
     if param11 == None:
         param11 = "a1"
 
+    delta1 = datetime.now()
 
     arr = mathything(param1, param2, param3, param4, param5, param6, param7, param8, param9, param10, param11)
     # param1, param2, param3, param4, param5, param6, param7, param8, param9, param10
     # a1, muta1a2, muta2a1, a1a1fit, a1a2fit, a2a2fit, popsize, gens, randomness, ifdecreasing
     # arr = mathything(0.5, 0, 0, 0.97, 1.0, 1.0, 100, 100, "yes", True)
+
+    delta2 = datetime.now()
+
+    time = delta2 - delta1
+    print("Delta: " + str(time))
     graph_create(arr, 'A1')
 
 def graph_create(pointlist, type):
