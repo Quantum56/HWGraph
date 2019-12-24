@@ -74,7 +74,7 @@ def main():
     else:
         param10 = False
     
-    param11 = input("Indicate which graph is desired (a1, a1a1, a1a2, a2a2)")
+    param11 = input("Indicate which graph is desired (a1, a1a1, a1a2, a2a2) ")
     if param11 == None:
         param11 = "a1"
 
