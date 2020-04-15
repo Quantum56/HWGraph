@@ -7,6 +7,7 @@ from random import random
 from pylab import figure, axes, plot, title, show, legend, savefig, ylim
 import math as m
 from datetime import datetime
+from src.maths import mathything
 #import logging
 
 def main():
@@ -117,72 +118,6 @@ def graph_create(pointlist, type):
 
     show()  # Actually, don't show, just save to foo.png
     #savefig('foo.png', bbox_inches='tight')
-
-def mathything(a1, muta1a2, muta2a1, a1a1fit, a1a2fit, a2a2fit, popsize, gens, randomness, ifdecreasing, returnedarr):
-    if randomness == 'yes':
-        godcoeff = 0.51
-    else:
-        godcoeff = 0
-
-    population = popsize
-
-    p = a1
-    q = 1 - a1
-    a1a1arr = []
-    a1a2arr = []
-    a2a2arr = []
-    a1arr = [p]
-    a2arr = [q]
-    a1a1 = p*p
-    a1a2 = 2 * p * q
-    a2a2 = q*q
-    a1a1arr.append(a1a1)
-    a1a2arr.append(a1a2)
-    a2a2arr.append(a2a2)
-    i = 0
-    while i < gens:
-
-        bb = random()
-        if bb <= 0.5:
-            bb = 1
-        else:
-         bb = -1
-
-
-        a1a1 = 2*p*q*muta2a1 + p*p*a1a1fit + godcoeff * bb * 1/population * random()
-        a1a2 = p*p*muta1a2 + q*q*muta2a1 + 2*p*q*a1a2fit + godcoeff * bb * 1/population * random()
-        a2a2 = 2*p*q*muta2a1 + q*q*a2a2fit + godcoeff * bb * 1/population * random()
-        p = m.sqrt(abs(a1a1))
-        q = m.sqrt(abs(a2a2))
-        a1a1arr.append(a1a1)
-        a2a2arr.append(a2a2)
-        a1a2arr.append(a1a2)
-        a1arr.append(p)
-        a2arr.append(q)
-        
-
-        a1a1 = round(a1a1 * 10000) / 10000
-        a1a2 = round(a1a2 * 10000) / 10000
-        a2a2 = round(a2a2 * 10000) / 10000
-
-        i += 1
-
-        if ifdecreasing:
-            population -= (population * ((1-a1a1fit) + (1-a1a2fit) + (1-a2a2fit)))
-            population = round(population)
-            #print(population)
-    print("End population is: " + str(population) + " individuals")
-    
-    if returnedarr == "a1":
-        return a1arr
-    elif returnedarr == "a1a1":
-        return a1a1arr
-    elif returnedarr == "a1a2":
-        return a1a2arr
-    elif returnedarr == "a2a2":
-        return a2a2arr
-    else:
-        return a1arr
 
 if __name__ == '__main__':
     main()

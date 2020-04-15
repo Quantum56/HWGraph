@@ -28,7 +28,7 @@ def graph_create(mylist, type):
     show()  # Actually, don't show, just save to foo.png
     #savefig('foo.png', bbox_inches='tight')
 
-def mathything(a1, muta1a2, muta2a1, a1a1fit, a1a2fit, a2a2fit, popsize, gens, randomness, ifdecreasing):
+def mathything(a1, muta1a2, muta2a1, a1a1fit, a1a2fit, a2a2fit, popsize, gens, randomness, ifdecreasing, returnedarr):
     if randomness == 'yes':
         godcoeff = 0.51
     else:
@@ -58,7 +58,7 @@ def mathything(a1, muta1a2, muta2a1, a1a1fit, a1a2fit, a2a2fit, popsize, gens, r
         else:
          bb = -1
 
-        if(population!=0):
+        if(population != 0):
             a1a1 = 2*p*q*muta2a1 + p*p*a1a1fit + godcoeff * bb * 1/population * random()
             a1a2 = p*p*muta1a2 + q*q*muta2a1 + 2*p*q*a1a2fit + godcoeff * bb * 1/population * random()
             a2a2 = 2*p*q*muta2a1 + q*q*a2a2fit + godcoeff * bb * 1/population * random()
@@ -81,10 +81,21 @@ def mathything(a1, muta1a2, muta2a1, a1a1fit, a1a2fit, a2a2fit, popsize, gens, r
             population -= (population * ((1-a1a1fit) + (1-a1a2fit) + (1-a2a2fit)))
             population = round(population)
             #print(population)
-    print(population)
-    return a1arr
+    print("End population is: " + str(population) + " individuals")
+    
+    if returnedarr == "a1":
+        return a1arr
+    elif returnedarr == "a1a1":
+        return a1a1arr
+    elif returnedarr == "a1a2":
+        return a1a2arr
+    elif returnedarr == "a2a2":
+        return a2a2arr
+    else:
+        return a1arr
     
 if __name__ == '__main__':
+    print('Testing...')
     arr = mathything(0.5, 0, 0, 0.97, 1.0, 1.0, 100, 100, "yes", True)
 
     for x in range(len(arr)):
