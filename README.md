@@ -1,2 +1,2 @@
 # HWGraph
-A python implementation of Hardy Weinberg simulations
+A python CLI implementation of Hardy Weinberg simulations
