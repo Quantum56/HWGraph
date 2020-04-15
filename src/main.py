@@ -8,6 +8,7 @@ from pylab import figure, axes, plot, title, show, legend, savefig, ylim
 import math as m
 from datetime import datetime
 from src.maths import mathything
+from src.graph import graph_create
 #import logging
 
 def main():
@@ -91,33 +92,6 @@ def main():
     time = delta2 - delta1
     print("Delta: " + str(time))
     graph_create(arr, 'A1')
-
-def graph_create(pointlist, type):
-
-    ##tests with logger
-    #logger = logging.getLogger('HWGraph')
-    #hdlr = logging.FileHandler('/HWGraph.log')
-    #formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
-    #hdlr.setFormatter(formatter)
-    #logger.addHandler(hdlr) 
-    #logger.setLevel(logging.WARNING)
-
-    if path.exists('foo.png'):
-        os.remove("foo.png")
-
-    #for x in range(len(pointlist)):
-    #    logger.info(str(pointlist[x]))
-
-    figure(1, figsize=(12, 6))
-
-    ylim(top=1)
-    plot(pointlist)
-    title('Frequency of %s' %type, bbox={'facecolor': '0.8', 'pad': 5})
-    legend()
-    
-
-    show()  # Actually, don't show, just save to foo.png
-    #savefig('foo.png', bbox_inches='tight')
 
 if __name__ == '__main__':
     main()
