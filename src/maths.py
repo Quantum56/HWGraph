@@ -18,13 +18,12 @@ def graph_create(mylist, type):
     for x in range(len(mylist)):
         print(mylist[x], end=" ")
 
-    figure(1, figsize=(12, 6))
+    figure(1, figsize=(12, 6),num="Test")
 
     ylim(top=1)
     plot(mylist)
     title('Frequency of %s' %type, bbox={'facecolor': '0.8', 'pad': 5})
     legend()
-    
 
     show()  # Actually, don't show, just save to foo.png
     #savefig('foo.png', bbox_inches='tight')
@@ -59,10 +58,10 @@ def mathything(a1, muta1a2, muta2a1, a1a1fit, a1a2fit, a2a2fit, popsize, gens, r
         else:
          bb = -1
 
-
-        a1a1 = 2*p*q*muta2a1 + p*p*a1a1fit + godcoeff * bb * 1/population * random()
-        a1a2 = p*p*muta1a2 + q*q*muta2a1 + 2*p*q*a1a2fit + godcoeff * bb * 1/population * random()
-        a2a2 = 2*p*q*muta2a1 + q*q*a2a2fit + godcoeff * bb * 1/population * random()
+        if(population!=0):
+            a1a1 = 2*p*q*muta2a1 + p*p*a1a1fit + godcoeff * bb * 1/population * random()
+            a1a2 = p*p*muta1a2 + q*q*muta2a1 + 2*p*q*a1a2fit + godcoeff * bb * 1/population * random()
+            a2a2 = 2*p*q*muta2a1 + q*q*a2a2fit + godcoeff * bb * 1/population * random()
         p = m.sqrt(abs(a1a1))
         q = m.sqrt(abs(a2a2))
         a1a1arr.append(a1a1)
